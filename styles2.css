@@ -1,0 +1,1166 @@
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	--text-color:#212121;
+    --text-color-white:#FBFBFB;
+    --background-grey: #F5F5F5;
+
+    --rood:#C55545;
+    --oranje-oud:#FA9746;
+    --blauw-oud:#9BBEDC;
+    --groen:#6AB7BF;
+
+    --lila:#BA98FF;
+    --oranje:#FFB088;
+    --blauw:#7394A5; 
+
+
+
+    --font1:filson-pro, sans-serif;
+    --font2:acumin-pro, sans-serif;
+
+    --fontfilson:filson-pro, sans-serif;
+    --fontstratos:stratos, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/*******************/
+/*** HEADER ***/
+/*******************/
+
+header h1{
+    color: var(--text-color);
+    font-family: acumin-pro, sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+h1 a{
+    color: var(--text-color)
+}
+
+header{
+    display: flex;
+    margin: 2em 8em 2em 8em;
+    gap:20em;
+    justify-content: space-between;
+    
+    position: sticky;
+}
+
+header nav > ul{
+    display: flex;
+    justify-content: space-between;
+    gap:5em;
+}
+
+header nav > ul > li a{
+    color: var(--text-color);
+    font-family: acumin-pro, sans-serif;
+    font-size: 1.2em;
+
+    position: relative;
+}
+
+nav ul li a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #18272F;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+  
+nav ul li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+/* .home header nav ul li ul.dropdownmenu li a{
+    position: absolute;
+    z-index: 999;
+    display: none;
+    min-width: 100%;
+  }
+  
+.home header nav ul li:hover ul.dropdownmenu li a{
+    display: block
+  }
+  
+  .home header nav ul li ul.dropdownmenu li{
+    clear: both;
+    min-width: 100%;
+  } */
+
+
+
+
+/*******************/
+/*** LANDING PAGE ***/
+/*******************/
+.home main{
+    margin-left: 8em;
+    
+}
+
+.home main section:first-of-type{
+    display: grid;
+    grid-template-columns: 40em 1fr;
+    grid-template-rows: max-content max-content;
+
+    background: rgb(34,34,34);
+    background: linear-gradient(31deg, rgba(34,34,34,1) 0%, rgba(15,43,48,1) 20%, rgba(83,83,83,1) 67%, rgba(84,108,111,1) 100%);
+
+    padding: 6em;
+    border-top-left-radius: 2em;
+    border-bottom-left-radius: 2em;
+
+    margin-right: 0em;
+}
+
+.home main section:first-of-type ul{
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    margin-right: 2em;
+}
+
+.home main section:first-of-type h2{
+    font-family: var(--fontstratos);
+    font-size: 3.8em;
+    color: var(--text-color-white);
+    line-height: 1.2em;
+
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.home main section:first-of-type p{
+    font-family: var(--fontstratos);
+    font-size: 1.5em;
+    font-weight: 200;
+    color: var(--text-color-white);
+    line-height: 1.5em;
+
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.home main section:first-of-type span{
+    animation-name: kleurverloop;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes kleurverloop{
+    0%{
+        color: var(--rood);
+    }
+    20%{
+        color: var(--oranje);
+    }
+    40%{
+        color: var(--groen);
+    }
+    60%{
+        color: var(--blauw);
+    }
+    80%{
+        color: var(--text-color-white);
+    }
+    100%{
+        color: var(--rood);
+    }
+}
+
+.home main section:first-of-type ul{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    gap: 2em;
+}
+
+main section:first-of-type ul li img{
+    width:5em;
+    transition: 0.5s;
+}
+
+main section:first-of-type ul li img:hover{
+    transform: translateX(-1em);
+}
+
+/*******************/
+/*** scroll naar beneden ***/
+/*******************/
+.bekijkmeerscroll img{
+    width: 0.7%;
+    margin: 0 0 0 10px;
+    padding-bottom: 2px;
+}
+
+.bekijkmeerscroll{
+    font-family:'filson-pro', sans-serif;
+    font-size: 1.1em;
+    
+    display: flex;
+    justify-content: flex-end;
+    padding: 2em 0 0 0;
+    margin: 1em 8em 3em 0;
+
+    animation-name: wijs-naar-knop-animation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wijs-naar-knop-animation {
+    0%{
+      transform:translate(0);
+    }
+    50%{
+        transform: translate(0);
+    }
+    55%{
+      transform:translate(0, -0.5em);
+    }
+    60%{
+      transform:translate(0);
+    }
+    65%{
+      transform:translate(0, -0.5em);
+    }
+    70%{
+     transform:translate(0);
+    }
+    100%{
+      transform:translate(0);
+    }
+  }
+
+/*******************/
+/*** PROJECTEN ***/
+/*******************/
+
+
+main > h2{
+    font-family: filson-pro, sans-serif;
+    font-size: 3em;
+    color: var(--text-color);
+    margin-bottom: 1em;
+    
+}
+
+.home main h3{
+    font-family: filson-pro, sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 1.5em;
+    border-bottom: solid 5px var(--text-color);
+    width: 4.5em;
+    padding-bottom: 0.5em;
+}
+
+main section:nth-of-type(2){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content max-content;
+    gap: 1.2em;
+
+    margin-right: 8em;
+    margin-bottom: 2em;
+}
+
+.home main article{
+    background-color: var(--background-grey);
+    border-radius: 1em;
+    transition: 0.5s;
+    border: solid 4px transparent;
+}
+
+.home main article:hover{
+    border: solid 4px var(--groen);
+    transition: 0.5s;
+}
+
+main article div{
+    padding: 1.5em;
+}
+
+main article p{
+    font-family: acumin-pro, sans-serif;
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+main article h4{
+    font-family: filson-pro, sans-serif;
+    font-size: 1.2em;
+}
+
+main section article a img{
+    width: 100%;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    transition: 0.5s;
+}
+
+main section article a img:hover{
+    transform: scale(0.9);
+    border-radius: 1em;
+    
+}
+
+
+
+
+/* JAAR 1 */
+main section:nth-of-type(3){
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content max-content max-content;
+    gap: 1.2em;
+
+    margin-right: 8em;
+}
+
+
+/*******************/
+/*** footer ***/
+/*******************/
+footer{
+    margin: 4em 0 1em 0;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font1);
+    font-weight: 200;
+    color: var(--text-color);
+}
+
+/*******************/
+/*** in sliden ***/
+/*******************/
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(100%);
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+    transform: scale(1);
+}
+
+@media (prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+
+}
+
+@media (max-width:426px){
+    header{
+        margin: 2em 1em 2em 1em;
+        gap: 0.5em;
+        align-items: baseline;
+    }
+
+    .home header h1 a{
+        width: max-content;
+        font-size: 0.75em;
+        font-weight: 400;
+    }
+
+    .home header nav li a{
+        font-size: 0.9em;
+    }
+
+    header nav ul{
+        gap: 1.8em;
+    }
+
+    .home main{
+        margin-left: 1em;
+    }
+
+    .home main section:first-of-type h2{
+        font-size: 2.2em;
+    }
+
+    .home main section:first-of-type p{
+        font-size: 1em;
+
+    }
+
+    .home main section:first-of-type ul li img{
+        width: 5em;
+    }
+
+    .home main section:first-of-type {
+        display: flex;
+        flex-direction: column;
+        padding: 5em 2em;
+        gap: 2.5em;
+    }
+
+    .home main section:first-of-type ul{
+        display: flex;
+        flex-direction: row;
+        margin: 2em 0 1em 0;
+        padding: 0;
+        gap: 1em;
+        align-content: center;
+    }
+
+    .bekijkmeerscroll{
+        margin-top: 0.5em;
+        font-size: 1em;
+        
+    }
+
+    .bekijkmeerscroll img {
+        width: 2.5%;
+    }
+
+    main section:nth-of-type(2), main section:nth-of-type(3) {
+        margin-right: 1em;
+
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:1024px){
+    header{
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+
+    .home main{
+        margin-left: 4em;
+    }
+
+    .home main section:first-of-type ul li img{
+        width: 5em;
+    }
+
+    .home main section:first-of-type {
+        display: grid;
+        grid-template-columns: 85% 15%;
+    }
+
+    .bekijkmeerscroll{
+        margin-right: 4em;
+    }
+
+    main section:nth-of-type(2), main section:nth-of-type(3) {
+        margin-right: 4em;
+    }
+}
+
+@media (max-width:768px){
+    header{
+        gap: 10%;
+        margin: 2em 4em 2em 4em;
+    }
+
+    .home main{
+        margin-left: 4em;
+    }
+
+    .home main section:first-of-type h2{
+        font-size: 2.5em;
+    }
+
+    .home main section:first-of-type p{
+        font-size: 1.2em;
+    }
+
+    .home main section:first-of-type ul li img{
+        width: 5em;
+    }
+
+    .home main section:first-of-type {
+        display: grid;
+        grid-template-columns: 85% 15%;
+    }
+
+    .bekijkmeerscroll{
+        margin-right: 4em;
+    }
+
+    main section:nth-of-type(2), main section:nth-of-type(3) {
+        margin-right: 4em;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:425px){
+    header{
+        margin: 2em 2em 2em 2em;
+        gap: 0.8em;
+    }
+
+    .home header h1 a{
+        width: max-content;
+    }
+
+    header li{
+        width: max-content;
+    }
+
+    header nav ul{
+        gap: 2.5em;
+    }
+
+    .home main{
+        margin-left: 2em;
+    }
+
+    .home main section:first-of-type h2{
+        font-size: 2.5em;
+    }
+
+    .home main section:first-of-type p{
+        font-size: 1.2em;
+
+    }
+
+    .home main section:first-of-type ul li img{
+        width: 100%;
+    }
+
+    .home main section:first-of-type {
+        display: flex;
+        flex-direction: column;
+        padding: 5em 3em;
+        gap: 1em;
+    }
+
+    .home main section:first-of-type ul{
+        display: flex;
+        flex-direction: row;
+        margin: 2.5em 0 1em 0;
+        padding: 0;
+        gap: 1em;
+        align-content: center;
+    }
+
+    .bekijkmeerscroll{
+        margin-right: 2em;
+    }
+
+    .bekijkmeerscroll img {
+        width: 2.5%;
+    }
+
+    main section:nth-of-type(2), main section:nth-of-type(3) {
+        margin-right: 2em;
+
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:320px){
+    header{
+        margin: 2em 1em 2em 1em;
+        gap: 0.5em;
+        align-items: baseline;
+    }
+
+    .home header h1 a{
+        width: max-content;
+        font-size: 0.75em;
+        font-weight: 400;
+    }
+
+    .home header nav li a{
+        font-size: 0.9em;
+    }
+
+    header nav ul{
+        gap: 1.8em;
+    }
+
+    .home main{
+        margin-left: 1em;
+    }
+
+    .home main section:first-of-type h2{
+        font-size: 2.2em;
+    }
+
+    .home main section:first-of-type p{
+        font-size: 1em;
+
+    }
+
+    .home main section:first-of-type ul li img{
+        width: 100%;
+    }
+
+    .home main section:first-of-type {
+        display: flex;
+        flex-direction: column;
+        padding: 5em 2em;
+        gap: 2.5em;
+    }
+
+    .home main section:first-of-type ul{
+        display: flex;
+        flex-direction: row;
+        margin: 2em 0 1em 0;
+        padding: 0;
+        gap: 1em;
+        align-content: center;
+    }
+
+    .bekijkmeerscroll{
+        margin-top: 0.5em;
+        font-size: 1em;
+        
+    }
+
+    .bekijkmeerscroll img {
+        width: 2.5%;
+    }
+
+    main section:nth-of-type(2), main section:nth-of-type(3) {
+        margin-right: 1em;
+
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width:1700px) {
+    .home {
+        margin: 0 12em;
+    }
+}
+
+@media (min-width:2100px) {
+    .home {
+        margin: 0 25em;
+    }
+
+    main section:nth-of-type(2) article img, main section:nth-of-type(3) article img{
+        width: 100%;
+    }
+}
+
+
+
+/***************************************/
+/************* OVER MIJ *************/
+/***************************************/
+.aboutme main article{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, max-content);
+
+    gap: 1em;
+    padding: 5em;
+    margin: 0 8em;
+    border-radius: 2em;
+    background-color: #ededed;
+}
+
+.aboutme main article h2{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    font-family: var(--font1);
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.aboutme main article p{
+    grid-column: 1/2;
+    font-family: var(--font2);
+    font-size: 1em;
+    font-weight: 200;
+}
+
+.aboutme main article p:first-of-type{
+    font-size: 1.5em;
+    grid-row: 2/3;
+    font-weight: 400;
+}
+
+.aboutme main article img{
+    grid-column: 2/3;
+    grid-row: 1/6;
+    width: 70%;
+    justify-self: end;
+    border-radius: 1em;
+}
+
+.aboutme main article a{
+    color: var(--oranje);
+    font-weight: 400;
+}
+
+
+
+
+/***************************************/
+/************* PROJECTEN *************/
+/***************************************/
+.projectpage{
+    background-color: #F5F5F5;
+}
+
+.projectpage main{
+    margin: 0 8em;
+}
+
+.projectpage main article{
+    margin: 3em 0;
+    display: grid;
+    column-gap: 3em;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: max-content 3.5em max-content max-content;
+}
+
+.projectpage main article h2{
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    font-family: var(--font1);
+    font-size: 2.5em;
+    font-weight: 800;
+    border: none;
+}
+
+.projectpage main article h3{
+    grid-row: 2/3;
+    grid-column: 1/2;
+
+    font-family: var(--font2);
+    font-size: 1.4em;
+    font-weight: 200;
+
+}
+
+.projectpage main article p:first-of-type{
+    grid-row: 3/4;
+    grid-column: 1/2;
+
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+.projectpage main article p:nth-of-type(2){
+    grid-row: 4/5;
+    grid-column: 1/2;
+
+    font-size: 1.2em;
+}
+
+.projectpage main article p a{
+    font-weight: 400;
+    color: var(--groen);
+}
+
+.projectpage main article img, .projectpage main article iframe{
+    grid-row: 1/5;
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%;
+}
+
+.projectpage main > a{
+    font-family: var(--font1);
+    color: var(--groen);
+    font-weight: 400;
+}
+
+.projectpage main > section{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 1em;
+}
+
+.projectpage main section img{
+    width: 48%;
+    height: max-content;
+    
+}
+
+.projectpage main > .plaatjesoverzicht2{
+    display: flex;
+    flex-direction: column;
+ }
+
+.projectpage .plaatjesoverzicht2 img:first-of-type{
+    width: 100%;
+    margin-bottom: 3em;
+}
+
+.projectpage .plaatjesoverzicht2 img:nth-of-type(2){
+    width: 50%;
+}
+
+.projectpage .bekijkmeerscroll{
+    margin-right: 0;
+}
+
+
+@media (max-width:1024px){
+    header{
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+
+    .bekijkmeerscroll{
+        margin-right: 4em;
+    }
+
+    .projectpage main article img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width:768px){
+    header{
+        margin: 2em 1em 2em 1em;
+        gap: 0.5em;
+        align-items: baseline;
+    }
+
+    .projectpage header h1 a{
+        width: max-content;
+        font-size: 0.75em;
+        font-weight: 400;
+    }
+
+    .projectpage header nav li a{
+        font-size: 0.9em;
+    }
+
+    header nav ul{
+        gap: 1.8em;
+    }
+
+    .projectpage main{
+        margin: 1em;
+    }
+
+    .projectpage main article h2{
+        font-size: 2em;
+    }
+
+    .projectpage main article h3{
+        font-size: 1.2em;
+    }
+
+    .projectpage main article p:first-of-type{
+        font-size: 1em;
+
+    }
+
+    .projectpage main article {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        
+    }
+
+    .bekijkmeerscroll{
+        margin-top: 0.5em;
+        font-size: 1em;
+        
+    }
+
+    .bekijkmeerscroll img {
+        width: 2.5%;
+    }
+
+    .projectpage main section {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .projectpage main section img{
+        width: 100%;
+    }
+}
+
+@media (max-width:425px){
+    header{
+        margin: 2em 1em 2em 1em;
+        gap: 0.5em;
+        align-items: baseline;
+    }
+
+    .projectpage header h1 a{
+        width: max-content;
+        font-size: 0.75em;
+        font-weight: 400;
+    }
+
+    .projectpage header nav li a{
+        font-size: 0.9em;
+    }
+
+    header nav ul{
+        gap: 1.8em;
+    }
+
+    .projectpage main{
+        margin: 1em;
+    }
+
+    .projectpage main article h2{
+        font-size: 2em;
+    }
+
+    .projectpage main article h3{
+        font-size: 1.2em;
+    }
+
+    .projectpage main article p{
+        font-size: 0.6em;
+
+    }
+
+    .projectpage main article {
+        display: flex;
+        flex-direction: column;
+        padding: 2em 0em;
+        gap: 1em;
+        margin-top: 0;
+        width: 90vw;
+    }
+
+    .bekijkmeerscroll{
+        margin-top: 0.5em;
+        font-size: 1em;
+        
+    }
+
+    .bekijkmeerscroll img {
+        width: 2.5%;
+    }
+
+    .projectpage main section {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .projectpage main section img{
+        width: 100%;
+    }
+}
+
+@media (max-width:320px){
+    header{
+        margin: 2em 1em 2em 1em;
+        gap: 0.5em;
+        align-items: baseline;
+    }
+
+    .projectpage header h1 a{
+        width: max-content;
+        font-size: 0.75em;
+        font-weight: 400;
+    }
+
+    .projectpage header nav li a{
+        font-size: 0.9em;
+    }
+
+    header nav ul{
+        gap: 1.8em;
+    }
+
+    .projectpage main{
+        margin: 1em;
+    }
+
+    .projectpage main article h2{
+        font-size: 2em;
+    }
+
+    .projectpage main article h3{
+        font-size: 1.2em;
+    }
+
+    .projectpage main article p{
+        font-size: 0.6em;
+
+    }
+
+    .projectpage main article {
+        display: flex;
+        flex-direction: column;
+        padding: 2em 0em;
+        gap: 1em;
+        margin-top: 0;
+        width: 90vw;
+    }
+
+    .bekijkmeerscroll{
+        margin-top: 0.5em;
+        font-size: 1em;
+        
+    }
+
+    .bekijkmeerscroll img {
+        width: 2.5%;
+    }
+
+    .projectpage main section {
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .projectpage main section img{
+        width: 100%;
+    }
+}
+
+@media (min-width:1700px) {
+    .projectpage {
+        margin: 0 12em;
+    }
+}
+
+@media (min-width:2100px) {
+    .projectpage {
+        margin: 0 25em;
+    }
+}
+
+
+
+
+
+
+
+@media (max-width:1024px){
+    .aboutme main article {
+        padding: 4em;
+        gap: 1em;
+        margin: 3em;
+        margin-top: 0;
+    }
+}
+
+@media (max-width:768px){
+    .aboutme main{
+        margin: 1em;
+    }
+
+    .aboutme main article h2{
+        font-size: 1.5em;
+    }
+
+    .aboutme main article p:first-of-type{
+        font-size: 1.1em;
+    }
+
+    .aboutme main article {
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+        gap: 1em;
+        margin: 3em;
+        margin-top: 0;
+        width: 80vw;
+    }
+
+    .aboutme main article img{
+        width: 50%;
+        margin: auto;
+        margin-top: 2em;
+    }
+}
+
+@media (max-width:425px){
+    .aboutme main{
+        margin: 1em;
+    }
+
+    .aboutme main article h2{
+        font-size: 1.5em;
+    }
+
+    .aboutme main article p:first-of-type{
+        font-size: 1.2em;
+    }
+
+    .aboutme main article {
+        display: flex;
+        flex-direction: column;
+        padding: 2em 1em;
+        gap: 1em;
+        margin: 0;
+        margin-top: 0;
+        width: 80vw;
+    }
+
+    .aboutme main article img{
+        width: 100%;
+    }
+}
+
+@media (max-width:320px){
+     .aboutme main{
+        margin: 1em;
+    }
+
+    .aboutme main article h2{
+        font-size: 1.5em;
+    }
+
+    .aboutme main article p:first-of-type{
+        font-size: 1.1em;
+    }
+
+    .aboutme main article {
+        display: flex;
+        flex-direction: column;
+        padding: 2em 1em;
+        gap: 1em;
+        margin: 0;
+        margin-top: 0;
+        width: 80vw;
+    }
+
+    .aboutme main article img{
+        width: 100%;
+    }
+}
+
+@media (min-width:1700px) {
+    .aboutme {
+        margin: 0 12em;
+    }
+}
+
+@media (min-width:2100px) {
+    .aboutme {
+        margin: 0 25em;
+    }
+}

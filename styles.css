@@ -1,0 +1,1034 @@
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	--text-color:#323232;
+    --tag-color:#56737b;
+    --text-color-white:#FBFBFB;
+    --background-notwhite:#f9f5f3;
+    --background-grey: #F5F5F5;
+
+    --lila:#BA98FF;
+    --oranje:#FFB088;
+    --blauw:#7394A5; 
+
+    --fontfilson:filson-pro, sans-serif;
+    --fontstratos:stratos, sans-serif;
+    --fontstratoslight:stratos-lights, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.home{
+    background-color: var(--background-notwhite);
+}
+
+
+/*******************/
+/*** HEADER ***/
+/*******************/
+
+header h1 a img{
+    width: 140px;
+}
+
+header{
+    display: flex;
+    margin: 1em 4em 2em 4em;
+    
+    justify-content: space-between;
+    
+    position: sticky;
+    top: 1em;
+    z-index: 100;
+}
+
+header nav{
+    position: static;
+}
+
+header nav > ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5em;
+
+    background-color: var(--text-color);
+    border-radius: 100px;
+    padding: 10px;
+
+    position: static;
+
+    /* From https://css.glass */
+    background: rgba(16, 16, 16, 0.7);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.8px);
+    -webkit-backdrop-filter: blur(9.8px);
+}
+
+header nav > ul > li a{
+    color: var(--text-color-white);
+    font-family: var(--fontfilson);
+    font-weight: 500;
+    font-size: 0.8em;
+
+    position: relative;
+}
+
+header nav > ul > li:first-of-type{
+    padding-left: 10px;
+}
+
+header nav > ul > li:nth-of-type(3){
+    padding: 6px 30px;
+    border-radius: 100px;
+    border: solid 1px var(--text-color-white);
+}
+
+header nav > ul > li:nth-of-type(3):hover{
+    background-color: var(--lila);
+    border: solid 1px var(--lila);
+}
+
+/*effects on hover*/
+header nav > ul li a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color-white);
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+  
+header nav > ul li a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+
+
+/*******************/
+/*** LANDING PAGE ***/
+/*******************/
+
+.home main{
+    margin-left: 4em;
+    margin-right: 4em;
+    
+}
+
+.home main section:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content max-content max-content;
+
+    margin-top: 6em;
+}
+
+.home main section:first-of-type h2{
+    font-family: var(--fontstratos);
+    font-size: 10em;
+    font-weight: 600;
+    
+    color: var(--text-color);
+    line-height: 1.2em;
+
+    grid-row: 1/2;
+    grid-column: 1/4;
+
+    margin-bottom: 0.2em;
+}
+
+.home main section:first-of-type p{
+    font-family: var(--fontstratos);
+    font-size: 3.6em;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1em;
+
+    grid-row: 2/3;
+    grid-column: 1/3;
+
+    margin-bottom: 1.2em;
+}
+
+.home main section:first-of-type p span:nth-of-type(1){
+    color: var(--oranje);
+}
+
+.home main section:first-of-type p span:nth-of-type(2){
+    color: var(--blauw);
+}
+
+.home main section:first-of-type p span:nth-of-type(3){
+    color: var(--lila);
+}
+
+
+/* CTA buttons */
+
+main .cta ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    gap: 1em;
+    padding-left: 0;
+    margin-bottom: 6em;
+}
+
+main .cta ul li:first-of-type a{
+    padding: 16px 60px;
+    border-radius: 100px;
+    border: solid 1px;
+    background-color: var(--text-color);
+    transition: 0.5s;
+}
+
+main .cta ul li:first-of-type:hover{
+    transform: translateY(-0.4em);
+    transition: 0.5s;
+}
+
+main .cta ul li:first-of-type a:hover{
+    background-color: var(--lila);
+    border: solid 1px var(--lila);
+    transform: translateY(-0.4em);
+    transition: 0.5s;
+}
+
+main .cta ul li:first-of-type a{
+    color: var(--text-color-white);
+    font-family: var(--fontfilson);
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+main .cta ul li:nth-of-type(2) a{
+    
+    padding: 16px 60px;
+    border-radius: 100px;
+    border: solid 1px var(--text-color);
+    transition: 0.5s;
+    
+}
+
+main .cta ul li:nth-of-type(2) a{
+    color: var(--text-color);
+    font-family: var(--fontfilson);
+    font-weight: 500;
+    font-size: 1.2em;
+
+}
+
+main .cta ul li:nth-of-type(2):hover{
+    transform: translateY(-0.4em);
+    transition: 0.5s;
+}
+
+main .cta ul li:nth-of-type(2) a:hover{
+    border: solid 1px var(--lila);
+}
+
+
+/*******************/
+/**** PROJECTS MAIN ****/
+/*******************/
+
+.home main section:nth-of-type(3){
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.4em;
+    margin-bottom: 8em;
+}
+
+.home main section article:nth-of-type(1){
+    grid-row: 1/3;
+    grid-column: 1/3; 
+}
+
+.home main section article:nth-of-type(2){
+    grid-row: 1/2;
+    grid-column: 3/5; 
+    
+}
+
+.home main section article:nth-of-type(3){
+    grid-row: 2/3;
+    grid-column: 4/5; 
+    
+}
+
+.home main section article:nth-of-type(4){
+    grid-row: 3/4;
+    grid-column: 1/3; 
+    
+}
+
+.home main section article:nth-of-type(5){
+    grid-row: 3/5;
+    grid-column: 3/5; 
+    
+}
+
+.home main section article:nth-of-type(6){
+    grid-row: 4/6;
+    grid-column: 1/3; 
+    
+}
+
+
+.home main section article a img{
+    width: 100%;
+    border-radius: 0.4em;
+}
+
+.home main section article a div{
+    width: 100%;
+}
+
+.home main section article img{
+    transition: 0.5s;
+}
+
+.home main section article img:hover{
+    transform: translateY(-0.8em);
+    transition: 0.5s;
+}
+
+
+
+/***************************************/
+/************* PROJECTEN *************/
+/***************************************/
+.projectpage{
+    background-color: var(--background-grey);
+}
+
+.projectpage main{
+    margin: 0 4em;
+    
+}
+
+/*
+.projectpage main section div{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: 1fr max-content max-content;
+
+    position: relative;
+    z-index: 1;
+}
+*/
+
+.projectpage main > section:first-of-type{
+    margin-top: 6em;
+}
+
+.projectpage main section h1{
+    font-family: var(--fontstratos);
+    font-size: 3.5em;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.2em;
+
+    background-color: var(--background-grey);
+
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.projectpage main section:first-of-type img{
+    width: 100%;
+
+    border-radius: 1em;
+    margin-top: 3em;
+
+}
+
+.projectpage main section:first-of-type p{
+    font-family: var(--fontstratoslight);
+    font-size: 1.8em;
+    font-weight: 300;   
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.4em;
+
+    margin-bottom: 0.5em;
+
+    /* width: 60%; */
+
+    grid-row: 1/3;
+    grid-column: 2/3;
+    
+}
+
+.projectpage main section:first-of-type > div:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content max-content;
+    
+}
+
+.projectpage main .tags{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    margin-top: 1.5em;
+}
+
+.projectpage main .tags ul{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+
+.projectpage main .tags ul li{
+    color: var(--tag-color);
+    font-family: var(--fontstratos);
+    font-weight: 400;
+    font-size: 0.8em;
+
+    border: solid var(--tag-color) 1px;
+    border-radius: 5em;
+    padding: 0.3em 1.2em;
+    
+    margin: 0 0.5em 2em 0;
+}
+
+
+.projectpage main .proces, .home main .proces{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content;
+
+    margin: 4em 0;
+}
+
+.projectpage main .proces h2, .home main .proces h2{
+    font-family: var(--fontstratos);
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.2em;
+
+    background-color: var(--background-grey);
+
+    grid-row: 1/2;
+    grid-column: 1/2;
+
+    margin-right: 3em;
+}
+
+.projectpage main .proces div{
+    display: flex;
+    flex-direction: column;
+    grid-row: 1/3;
+    grid-column: 2/3;
+}
+
+.projectpage main .proces p, .home main .proces p{
+    font-family: var(--fontstratoslight);
+    font-size: 1.2em;
+    font-weight: 300;   
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.4em;
+
+    margin-bottom: 0.8em;
+
+    /* width: 60%; */
+
+}
+
+.projectpage main .proces p span{
+    font-family: var(--fontstratos);
+    font-size: 1em;
+    font-weight: 500;   
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.4em;
+
+
+}
+
+.projectpage main .procesimages{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content;
+}
+
+.projectpage main .procesimageswide img{
+    width: 100%;
+    border-radius: 1em;
+}
+
+.projectpage main .procesimages img:first-of-type{
+    width: 99%;
+    border-radius: 1em;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.projectpage main .procesimages img:nth-of-type(2){
+    width: 97%;
+    border-radius: 1em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.projectpage main > img{
+    width: 100%;
+    border-radius: 1em;
+    margin-top: 6em;
+}
+
+
+main .linktoproject p{
+    font-family: var(--fontstratos);
+    font-size: 2em;
+    font-weight: 500; 
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.4em;
+
+}
+main .linktoproject a{
+    font-family: var(--fontstratoslight);
+    font-size: 2em;
+    font-weight: 300;   
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    
+    text-decoration: underline;
+}
+
+main .linktoproject div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main .linktoproject div img{
+    height: 2em;
+    margin-right: 0.1em;
+}
+
+main .linktoproject{
+    margin-bottom: 10em;
+    margin-top: 2em;
+}
+
+
+
+/***************************************/
+/************* FOOTER *************/
+/***************************************/
+
+.projectpage footer{
+    margin-top: 4em;
+    
+    background-color: var(--text-color-white);
+}
+
+.projectpage footer h2{
+    font-family: var(--fontstratos);
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.2em;
+
+    margin-bottom: 1em;
+    padding: 2em 4em 0 2em;
+}
+
+.projectpage footer > div:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content;
+    gap: 2em;
+    padding: 0 4em;
+    
+}
+
+.projectpage footer div article{
+    display: flex;
+    flex-direction: column;
+}
+
+.projectpage footer article:first-of-type{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.projectpage footer article:nth-of-type(2){
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.projectpage footer article h3{
+    font-family: var(--fontstratos);
+    font-size: 1.6em;
+    font-weight: 500; 
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.4em;
+    margin-top: 0.5em;
+}
+
+.projectpage footer .tags{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+}
+
+.projectpage footer .tags li{
+    color: var(--tag-color);
+    font-family: var(--fontstratos);
+    font-weight: 400;
+    font-size: 0.8em;
+    border: solid var(--tag-color) 1px;
+    border-radius: 5em;
+
+    padding: 0.3em 1.2em;
+    margin: 1em 0.5em 2em 0;
+}
+
+.projectpage footer article img{
+    width: 100%;
+    border-radius: 1em;
+    transition: 0.5s;
+}
+
+.projectpage footer article img:hover{
+    transform: translateY(-0.8em);
+    transition: 0.5s;
+}
+
+.projectpage footer .backhome{
+    margin: 4em 0;
+    display: flex;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.projectpage footer .backhome a{
+    color: var(--text-color-white);
+    background-color: var(--text-color);
+    font-family: var(--fontstratos);
+    font-weight: 400;
+    font-size: 1.2em;
+    border: solid var(--text-color) 1px;
+    border-radius: 5em;
+
+    padding: 0.3em 2em;
+}
+
+.backhome a:visited{
+    color: var(--text-color-white);
+}
+
+.projectpage footer .backhome:hover{
+    transform: translateY(-0.4em);
+    transition: 0.5s;
+}
+
+.projectpage footer .backhome a:hover{
+    border: solid 1px var(--lila);
+    background-color: var(--lila);
+}
+
+/** FOOTER PT2 **/
+
+footer > section{
+    background-color: var(--text-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: max-content max-content;
+    padding: 5em 4em;
+    margin: 0;
+
+}
+
+footer > section div{
+    grid-row: 1/3;
+    grid-column: 2/3;
+
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: max-content max-content max-content;
+    column-gap: 1em;
+
+    
+}
+
+footer > section div img{
+    width: 100%;
+    border-radius: 50%;
+    grid-column: 1/2;
+    grid-row: 1/4;
+}
+
+footer > section h4{
+    font-family: var(--fontstratos);
+    font-size: 3em;
+    font-weight: 500; 
+    letter-spacing: -0.04em;
+    color: var(--text-color-white);
+    line-height: 1.4em;
+
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+footer > section div p{
+    font-family: var(--fontstratoslight);
+    font-weight: 300; 
+    letter-spacing: -0.04em;
+    color: var(--text-color-white);
+    line-height: 1.4em;
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 2em;
+}
+
+footer > section div a{
+    font-family: var(--fontstratoslight);
+    font-size: 1.4em;
+    font-weight: 300; 
+    letter-spacing: -0.04em;
+    color: var(--text-color-white);
+    line-height: 1.4em;
+}
+
+footer > section div a:nth-of-type(2){    
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+footer > section div a:first-of-type{
+    text-decoration: underline;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+footer > section div a:nth-of-type(2) span{
+    text-decoration: underline;
+}
+
+
+
+
+/***************************************/
+/************* ABOUT ME :) *************/
+/***************************************/
+
+.aboutme main{
+    margin-left: 4em;
+    margin-right: 4em;
+    
+}
+
+.aboutme main > img{
+    width: 100%;
+    border-radius: 1em;
+}
+
+.aboutme main > section:first-of-type{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content max-content max-content max-content;
+
+    margin-top: 2em;
+}
+
+.aboutme main section:first-of-type h2{
+    font-family: var(--fontstratos);
+    font-size: 4em;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.2em;
+
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+.aboutme main section:first-of-type h3{
+    font-family: var(--fontstratos);
+    font-size: 2em;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.2em;
+
+    grid-row: 2/3;
+    grid-column: 1/2;
+
+    margin-bottom: 0.2em;
+}
+
+.aboutme main section:first-of-type div{
+    grid-row: 1/4;
+    grid-column: 2/3;
+
+}
+
+.aboutme main section:first-of-type div p:first-of-type{
+    font-family: var(--fontstratoslight);
+    font-size: 1.8em;
+    font-weight: 300;   
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.4em;
+
+    margin-bottom: 1em;
+}
+
+.aboutme main section:first-of-type div p{
+    font-family: var(--fontstratoslight);
+    font-size: 1.2em;
+    font-weight: 300;   
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1.4em;
+
+    margin-bottom: 1em;
+}
+
+.aboutme main .cta{
+    grid-row: 4/5;
+    grid-column: 2/3;
+    background-color: #BA98FF;
+}
+
+
+
+/************************************/
+/****** HOVER/EFFECTEN/EXTRA'S ******/
+/************************************/
+
+
+/*******************/
+/*** in sliden ***/
+/*******************/
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+    transform: translateY(100%);
+}
+
+.show{
+    opacity: 1;
+    transform: translateY(0);
+    transform: scale(1);
+}
+
+@media (prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+
+}
+
+
+/************************************/
+/****** RESPONSIVE ******/
+/************************************/
+
+@media only screen and (max-width: 425px) {
+    .home{
+        margin: 0;
+    }
+
+    header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1em;
+        position: static;
+    }
+
+    header nav{
+        position: sticky;
+        top: 3em;
+    }
+
+    header nav > ul{
+        gap: 3em;
+    }
+
+    .home main section h2{
+        font-size: 1em;
+        color: #BA98FF;
+
+    }
+
+    .home main{
+        margin: 0 1em;
+    }
+
+    .home main section:first-of-type{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin-top: 2em;
+    }
+
+    .home main section:first-of-type h2{
+        font-size: 4em;
+        margin-bottom: 0.6em;
+    }
+    
+    .home main section:first-of-type p{
+        font-size: 2.8em;
+        line-height: 1.1em;
+        margin-bottom: 1em;
+    }
+
+    main .cta ul{
+        flex-direction: column;
+        gap: 3em;
+    }
+        
+    .home main section:nth-of-type(3){
+        display: flex;
+        flex-direction: column;
+        gap: 1.4em;
+    }
+
+    footer > section{
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer > section div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer > section div img{
+        width: 60%;
+        display: flex;
+        align-self: center;
+    }
+
+    .projectpage main{
+        margin: 0 1em;
+    }
+
+    .projectpage main > section:first-of-type{
+        margin-top: 3em;
+    }
+
+    .projectpage main section h1{
+        margin-bottom: 0.5em;
+    }
+
+    .projectpage main section:first-of-type > div:first-of-type{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projectpage main .tags{
+        display: flex;
+    }
+
+    .projectpage main .tags ul li{
+        margin: 0 0.5em 1em 0;
+    }
+
+    .projectpage main .proces h2{
+        margin-bottom: 1em;
+        font-size: 1.8em;
+    }
+
+    .projectpage main .proces{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projectpage main .procesimages{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projectpage footer{
+        padding: 0 0;
+    }
+
+    .projectpage footer h2{
+        padding: 1em 1em 0 1em;
+    }
+
+    .projectpage footer > div:first-of-type{
+        display: flex;
+        flex-direction: column;
+        padding: 0 1em;
+    }
+
+    .aboutme main{
+        margin: 0 1em;
+    }
+
+    .aboutme main > section:first-of-type{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .aboutme main section:first-of-type h2{
+        font-size: 4em;
+    }
+
+    .aboutme main section:first-of-type h3{
+        margin-bottom: 1em;
+    }
+
+    .aboutme main section:first-of-type div p:first-of-type{
+        font-size: 1.6em;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .home main section:first-of-type h2{
+        font-size: 6em;
+
+    }
+
+    .home main section:first-of-type p{
+        font-size: 3em;
+        margin-bottom: 1em;
+    }
+
+    .projectpage main .tags ul li{
+        margin: 0 0.5em 1em 0;
+    }
+
+    .projectpage main section h1{
+        margin-right: 0.5em;
+    }
+
+    .projectpage footer .tags li{
+        margin: 0.5em 0.5em 0.5em 0;
+    }
+}
